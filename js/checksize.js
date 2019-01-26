@@ -1,5 +1,12 @@
 $(document).ready(function () {
   var btn = $("#btn");
+
+  $("#input").keypress(function (e) {
+    if (e.which == 13) {
+      btn.click();
+    }
+  });
+
   btn.click(function () {
     var request = "https://api.github.com/repos/";
     request += $("#input").val();
